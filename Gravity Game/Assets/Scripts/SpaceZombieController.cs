@@ -6,10 +6,11 @@ public class SpaceZombieController : CharacterController
 {
     //object creation
     RandomTimer pauseDuration = new RandomTimer();
-    RandomTimer moveDuration = new RandomTimer();
+    RandomTimer moveDuration = new RandomTimer(); 
 
     int moveInput = 0;
     bool pause = false;
+    bool following = false;
 
     void Start()
     {
@@ -20,9 +21,23 @@ public class SpaceZombieController : CharacterController
 
     void FixedUpdate()
     {
-        randomMovement();
+        if (detectPlayer()&&following == false)
+        {
+            if(getFacingLeft())
+                moveInput = -1;
+            else
+                moveInput = 1;
+            following = true;
+        }         
+        else if(!detectPlayer()&& following == true)
+        {
+            moveInput = 0;
+            following = false;
+        }
+        else
+            randomMovement();
+        Debug.Log(detectPlayer() + "" + following);
         setMovement(moveInput);
-        //setJump(Input.GetKeyDown(KeyCode.Space));
         calculateUpdate();
     }
 
@@ -42,5 +57,19 @@ public class SpaceZombieController : CharacterController
             moveDuration.resetTimer();
             pauseDuration.resetTimer();
         }
+    }
+
+    bool detectPlayer()
+    {
+        for (int i = 0; i<60; i++)
+        {
+            float angle =  (getCharacterOrientation()+30 - i +(System.Convert.ToSingle(getFacingLeft()) *180)) % 360;
+            Vector2 temp = new Vector2(Mathf.Cos(angle * Mathf.PI / 180), Mathf.Sin(angle * Mathf.PI / 180));
+            RaycastHit2D lookForPlayer = Physics2D.Raycast(getCharacterCollider().bounds.center,temp, 100f, LayerMask.GetMask("player"));
+            RaycastHit2D lookForObstacles = Physics2D.Raycast(getCharacterCollider().bounds.center, temp, 100f, LayerMask.GetMask("Default"));
+            if (lookForPlayer.collider != null&& lookForObstacles.collider == null)
+                return true;
+        }
+        return false;
     }
 }   

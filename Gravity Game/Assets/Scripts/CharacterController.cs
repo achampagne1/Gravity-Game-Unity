@@ -45,6 +45,27 @@ public class CharacterController : MonoBehaviour{
         space = jumpInput;
     } 
 
+    public CircleCollider2D getCharacterCollider()
+    {
+        return circleColliderPlayer;
+    }
+
+    public Vector2 getGravityDirection()
+    {
+        return gravityDirection;
+    }
+
+    public float getCharacterOrientation()
+    {
+        return transform.rotation.eulerAngles.z;
+    }
+
+    public bool getFacingLeft()
+    {
+        return facingLeft;
+    }
+
+
     public void calculateStart()
     {
         rb = GetComponent<Rigidbody2D>();
