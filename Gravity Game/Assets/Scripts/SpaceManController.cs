@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class SpaceManController : CharacterController
 {
+    bool enemyCollideFlag = false;
+    float health = 10f;
     void Start()
     {
         calculateStart();
+        
     }
 
     void FixedUpdate()
@@ -14,5 +17,21 @@ public class SpaceManController : CharacterController
         setMovement((int)Input.GetAxisRaw("Horizontal"));
         setJump(Input.GetKeyDown(KeyCode.Space));
         calculateUpdate();
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "SpaceZombie" && enemyCollideFlag == false)
+        {
+            //Vector2 forceVector = new Vector2(-5f,0f);
+            //addForceLocal(forceVector);
+            Debug.Log("ouch");
+            health -= 1f;
+            UIHandler.instance.setHealthValue(health);
+            enemyCollideFlag = true;
+        }
+        else if (collision.gameObject.name != "SpaceZombie" && enemyCollideFlag == true)
+            enemyCollideFlag = false;
+        
     }
 }

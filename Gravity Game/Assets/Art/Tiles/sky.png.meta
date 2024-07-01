@@ -363,7 +363,7 @@ TextureImporter:
       213: 6170027739907533359
     second: sky_119
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -380,9 +380,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -391,9 +394,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -414,10 +417,15 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -429,6 +437,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -441,6 +450,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -453,6 +463,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -2988,9 +2999,129 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      sky_0: 3836954968553550457
+      sky_1: -3771456944750790363
+      sky_10: -8131015285519541747
+      sky_100: -1200329631546882949
+      sky_101: 9026195296935618799
+      sky_102: 8474492489210524498
+      sky_103: 4386259507818170332
+      sky_104: 5977621560367123710
+      sky_105: -2688773074909068483
+      sky_106: 4914259159622584423
+      sky_107: -7248637991009937267
+      sky_108: -1121642612012193349
+      sky_109: -4183644970595881234
+      sky_11: -7114588816198983811
+      sky_110: 2655361291688301548
+      sky_111: 5087886041088991846
+      sky_112: 4444140947837595538
+      sky_113: 7243442270944224152
+      sky_114: 3361451195491348309
+      sky_115: -2683218113980954069
+      sky_116: 5614235425813734411
+      sky_117: 2973020073669203670
+      sky_118: -7798426872704999169
+      sky_119: 6170027739907533359
+      sky_12: 1793599307847128127
+      sky_13: -5211345130169268260
+      sky_14: -9089514306737985959
+      sky_15: 5411333120571344135
+      sky_16: -8480761301738877431
+      sky_17: -3426394584999015856
+      sky_18: 6045508135244050752
+      sky_19: 4304011292925586101
+      sky_2: 5337003609049884300
+      sky_20: -8469168744684433899
+      sky_21: -5626783176071333699
+      sky_22: 1663776165776089988
+      sky_23: -5916873566666673826
+      sky_24: -8053610086927661630
+      sky_25: -6686693328835117318
+      sky_26: 335890141220023093
+      sky_27: 6379652448820867321
+      sky_28: -1551566519555024638
+      sky_29: 8196346628090253720
+      sky_3: -6189165695241950706
+      sky_30: -6547299823548917179
+      sky_31: -7416891163622143845
+      sky_32: 2963597842688344046
+      sky_33: -1024418365471137024
+      sky_34: -3233358036584155563
+      sky_35: 1938699166807104746
+      sky_36: -6633196905755570315
+      sky_37: 4284354402663604129
+      sky_38: -243109256408723520
+      sky_39: -8825399024023962090
+      sky_4: -5013125061674261037
+      sky_40: -3116790336215692130
+      sky_41: -1448327439893458999
+      sky_42: -1428978296723631916
+      sky_43: -2909236858700472391
+      sky_44: -4491806865967268106
+      sky_45: 4256199960371967664
+      sky_46: -3500625487223130727
+      sky_47: -1948556013879721797
+      sky_48: 335019055006665205
+      sky_49: -3811258530367872295
+      sky_5: -7337615200097296116
+      sky_50: -4602653302121163538
+      sky_51: 1944872753916926984
+      sky_52: -3524503640728721396
+      sky_53: 29455633674554086
+      sky_54: -1743349866947730442
+      sky_55: -6308738824558188059
+      sky_56: 4665134908996022594
+      sky_57: -6269855409051037158
+      sky_58: -9035310375547288021
+      sky_59: 255114334132194873
+      sky_6: -5159859854309103577
+      sky_60: -1763989495938513467
+      sky_61: -8979851433860222205
+      sky_62: -3850288823655588678
+      sky_63: 7068736154151804103
+      sky_64: -1578292988493404233
+      sky_65: -6057041221183705493
+      sky_66: -3448763049223509812
+      sky_67: -28806743182827806
+      sky_68: 89560852056631260
+      sky_69: 2369503736120463453
+      sky_7: -5704579707223990297
+      sky_70: 3527123541158364528
+      sky_71: 4826135794443715422
+      sky_72: 4429747543168292483
+      sky_73: 8186828253760547573
+      sky_74: -7121940000916324345
+      sky_75: 7343618595226405017
+      sky_76: 7324750356657270887
+      sky_77: 6155309089882574267
+      sky_78: 7249095266024311817
+      sky_79: -3073867915746396200
+      sky_8: -6558605468571745646
+      sky_80: -4151795469251282555
+      sky_81: 7550680590553849704
+      sky_82: -2093308862441114465
+      sky_83: 1105861665913818450
+      sky_84: -9116394880169535886
+      sky_85: -2432416680336205933
+      sky_86: -3280404871949043118
+      sky_87: -367909348256144868
+      sky_88: 3659901664639470985
+      sky_89: 2004901061430938113
+      sky_9: 906947489278751508
+      sky_90: 7745832174494889135
+      sky_91: 4579789296975346734
+      sky_92: -5188195610069397758
+      sky_93: -2107574571226786776
+      sky_94: 6897442775249695225
+      sky_95: -461872304356466557
+      sky_96: -2824374326938735955
+      sky_97: 3606991811114675914
+      sky_98: -2089299037109538756
+      sky_99: -2203219680909618679
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

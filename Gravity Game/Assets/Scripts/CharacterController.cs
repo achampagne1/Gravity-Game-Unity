@@ -23,7 +23,7 @@ public class CharacterController : MonoBehaviour{
     bool isGrounded = false;
     bool space = false;
     bool facingLeft = false;
-
+    
 
     //vectors
     Vector2 gravityDirection = new Vector2(0, 0);
@@ -34,6 +34,7 @@ public class CharacterController : MonoBehaviour{
     Vector2 drag = new Vector2(0, 0);
     Vector2 previousMove = new Vector2(0, 0);
     Vector2 jumpExtraction = new Vector2(0, 0);
+    Vector2 additionalForce = new Vector2(0, 0);
 
     public void setMovement(int moveInput)
     {
@@ -98,11 +99,33 @@ public class CharacterController : MonoBehaviour{
         calculateDrag();
 
         rb.AddForce(gravityForce);
-        rb.AddForce(jump + moveDirection + drag, ForceMode2D.Impulse);
+        rb.AddForce(jump, ForceMode2D.Impulse);
+        rb.AddForce(moveDirection, ForceMode2D.Impulse);
+        rb.AddForce(drag, ForceMode2D.Impulse);
 
-        rb.velocity += -jumpExtraction + jumpMagnitude * -gravityDirection;
+        //for some reason aidng the aitional force oes nothing
+        /*if (additionalForce != Vector2.zero)
+        {
+            Debug.Log("ouch");
+            rb.AddForce(additionalForce, ForceMode2D.Impulse);
+            Debug.Log(additionalForce);
+            additionalForce = Vector2.zero;
+        }*/
+
+        if(!IsGrounded())
+            rb.velocity += -jumpExtraction + jumpMagnitude * -gravityDirection; //this line is causing the glitch for them to fly up
         previousV = -rb.velocity;
         previousMove = -moveDirection;
+    }
+
+    public void addForceLocal(Vector2 force)
+    {
+        //Vector2 localForce = new Vector2(0, 0);
+
+        float angle = Vector2.SignedAngle(gravityDirection, force);
+        additionalForce = force;
+       // Debug.Log(localForce);
+        //rb.AddForce(localForce);
     }
 
     bool IsGrounded()
@@ -183,4 +206,17 @@ public class CharacterController : MonoBehaviour{
             drag = previousMove;
 
     }
+
+    Vector2 rotate(Vector2 v, float angle)
+    {
+        float radian = angle * Mathf.Deg2Rad; // Convert angle to radians
+        float cosTheta = Mathf.Cos(radian);
+        float sinTheta = Mathf.Sin(radian);
+
+        float newX = cosTheta * v.x - sinTheta * v.y;
+        float newY = sinTheta * v.x + cosTheta * v.y;
+
+        return new Vector2(newX, newY);
+    }
+
 }

@@ -11,6 +11,7 @@ public class SpaceZombieController : CharacterController
     int moveInput = 0;
     bool pause = false;
     bool following = false;
+    public bool movementToggle = true;
 
     void Start()
     {
@@ -21,23 +22,25 @@ public class SpaceZombieController : CharacterController
 
     void FixedUpdate()
     {
-        if (detectPlayer()&&following == false)
+        if (movementToggle) //for debugging purposes
         {
-            if(getFacingLeft())
-                moveInput = -1;
+            if (detectPlayer() && following == false)
+            {
+                if (getFacingLeft())
+                    moveInput = -1;
+                else
+                    moveInput = 1;
+                following = true;
+            }
+            else if (!detectPlayer() && following == true)
+            {
+                moveInput = 0;
+                following = false;
+            }
             else
-                moveInput = 1;
-            following = true;
-        }         
-        else if(!detectPlayer()&& following == true)
-        {
-            moveInput = 0;
-            following = false;
+                randomMovement();
+            setMovement(moveInput);
         }
-        else
-            randomMovement();
-        Debug.Log(detectPlayer() + "" + following);
-        setMovement(moveInput);
         calculateUpdate();
     }
 
