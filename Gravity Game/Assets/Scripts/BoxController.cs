@@ -6,7 +6,6 @@ public class BoxController : MonoBehaviour
 {
     //object creation
     Rigidbody2D rb;
-    CircleCollider2D circleColliderPlayer;
     Transform planetCenter;
 
     //vectors

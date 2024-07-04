@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\UIHandler.cs" />
     <Compile Include="Assets\Scripts\SpaceZombieController.cs" />
     <Compile Include="Assets\Scripts\SpaceWomanController.cs" />
+    <Compile Include="Assets\Scripts\MedPackController.cs" />
     <Compile Include="Assets\Scripts\BoxController.cs" />
     <Compile Include="Assets\Scripts\SpaceManController.cs" />
     <Compile Include="Assets\Scripts\RandomTimer.cs" />

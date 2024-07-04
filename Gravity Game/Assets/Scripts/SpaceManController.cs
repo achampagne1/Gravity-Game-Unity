@@ -25,13 +25,20 @@ public class SpaceManController : CharacterController
         {
             //Vector2 forceVector = new Vector2(-5f,0f);
             //addForceLocal(forceVector);
-            Debug.Log("ouch");
             health -= 1f;
             UIHandler.instance.setHealthValue(health);
             enemyCollideFlag = true;
         }
         else if (collision.gameObject.name != "SpaceZombie" && enemyCollideFlag == true)
             enemyCollideFlag = false;
-        
+
+        if (collision.gameObject.name == "MedPack")
+        {
+            health = 10f;
+            UIHandler.instance.setHealthValue(health);
+        }
+            
+
     }
+
 }

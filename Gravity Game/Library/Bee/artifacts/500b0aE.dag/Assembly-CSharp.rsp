@@ -399,6 +399,7 @@
 -analyzer:"A:/2023.2.1f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll"
 "Assets/Scripts/BoxController.cs"
 "Assets/Scripts/CharacterController.cs"
+"Assets/Scripts/MedPackController.cs"
 "Assets/Scripts/RandomTimer.cs"
 "Assets/Scripts/SpaceManController.cs"
 "Assets/Scripts/SpaceWomanController.cs"
