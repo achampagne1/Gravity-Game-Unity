@@ -1,21 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class SpaceManController : CharacterController
 {
     bool enemyCollideFlag = false;
     float health = 10f;
+
+    Rigidbody2D Bullet;
+
     void Start()
     {
+        GameObject BulletObject = GameObject.Find("Bullet");
+        Bullet = BulletObject.GetComponent<Rigidbody2D>();
+
         calculateStart();
         
     }
 
     void FixedUpdate()
     {
-        setMovement((int)Input.GetAxisRaw("Horizontal"));
-        setJump(Input.GetKeyDown(KeyCode.Space));
+        setMovement(inputSystemToGetAxis());
+        Debug.Log(Keyboard.current.aKey.isPressed);
+        setJump(Keyboard.current.spaceKey.isPressed);
         calculateUpdate();
     }
 
@@ -39,6 +47,16 @@ public class SpaceManController : CharacterController
         }
             
 
+    }
+
+    int inputSystemToGetAxis()
+    {
+        if (Keyboard.current.aKey.isPressed)
+            return -1;
+        if (Keyboard.current.dKey.isPressed)
+            return 1;
+        else
+            return 0;
     }
 
 }

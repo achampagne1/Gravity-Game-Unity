@@ -35,6 +35,7 @@ public class CharacterController : MonoBehaviour{
     Vector2 previousMove = new Vector2(0, 0);
     Vector2 jumpExtraction = new Vector2(0, 0);
     Vector2 additionalForce = new Vector2(0, 0);
+    Vector2 qq = new Vector2(0, 10);
 
     public void setMovement(int moveInput)
     {
@@ -69,6 +70,7 @@ public class CharacterController : MonoBehaviour{
 
     public void calculateStart()
     {
+                       
         rb = GetComponent<Rigidbody2D>();
         circleColliderPlayer = GetComponent<CircleCollider2D>();
         heightTestPlayer = circleColliderPlayer.bounds.extents.y + 0.05f;
@@ -76,6 +78,9 @@ public class CharacterController : MonoBehaviour{
 
         GameObject temp = GameObject.Find("Planet");
         planetCenter = temp.GetComponent<Transform>();
+        
+        if (Bullet != null)
+            Debug.Log("f");
 
         rb.velocity = new Vector2(0, 0); //this can be moifie to have a starting velocity*/
     }

@@ -118,6 +118,7 @@
 -define:ENABLE_TERRAIN
 -define:ENABLE_TILEMAP
 -define:ENABLE_TIMELINE
+-define:ENABLE_INPUT_SYSTEM
 -define:ENABLE_LEGACY_INPUT_MANAGER
 -define:TEXTCORE_FONT_ENGINE_1_5_OR_NEWER
 -define:TEXTCORE_TEXT_ENGINE_1_5_OR_NEWER
@@ -381,6 +382,8 @@
 -r:"Library/Bee/artifacts/500b0aE.dag/Unity.Burst.Editor.ref.dll"
 -r:"Library/Bee/artifacts/500b0aE.dag/Unity.Burst.ref.dll"
 -r:"Library/Bee/artifacts/500b0aE.dag/Unity.Collections.ref.dll"
+-r:"Library/Bee/artifacts/500b0aE.dag/Unity.InputSystem.ForUI.ref.dll"
+-r:"Library/Bee/artifacts/500b0aE.dag/Unity.InputSystem.ref.dll"
 -r:"Library/Bee/artifacts/500b0aE.dag/Unity.InternalAPIEditorBridge.001.ref.dll"
 -r:"Library/Bee/artifacts/500b0aE.dag/Unity.InternalAPIEngineBridge.001.ref.dll"
 -r:"Library/Bee/artifacts/500b0aE.dag/Unity.Mathematics.Editor.ref.dll"
@@ -398,6 +401,7 @@
 -analyzer:"A:/2023.2.1f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 -analyzer:"A:/2023.2.1f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll"
 "Assets/Scripts/BoxController.cs"
+"Assets/Scripts/BulletController.cs"
 "Assets/Scripts/CharacterController.cs"
 "Assets/Scripts/MedPackController.cs"
 "Assets/Scripts/RandomTimer.cs"
