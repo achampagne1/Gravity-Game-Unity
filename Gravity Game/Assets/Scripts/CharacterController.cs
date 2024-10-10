@@ -2,16 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterController : MonoBehaviour{
+public class CharacterController : ObjectController{
     //object creation
-    Rigidbody2D rb;
     CircleCollider2D circleColliderPlayer;
-    Transform planetCenter;
 
     //constants
     public float moveSpeed = 20f;
     public float jumpForce = 11f;
-    public float gravityForceMag = 20f;
 
     //game variables
     float heightTestPlayer = 0;
@@ -19,15 +16,12 @@ public class CharacterController : MonoBehaviour{
     float rotatedX = 0;
     float rotatedY = 0;
     float jumpMagnitude = 0;
-    int layerMaskPlanet = 0;
     bool isGrounded = false;
     bool space = false;
     bool facingLeft = false;
     
 
     //vectors
-    Vector2 gravityDirection = new Vector2(0, 0);
-    Vector2 gravityForce = new Vector2(0, 0);
     Vector2 moveDirection = new Vector2(0, 0);
     Vector2 jump = new Vector2(0, 0);
     Vector2 previousV = new Vector2(0, 0);
@@ -68,39 +62,28 @@ public class CharacterController : MonoBehaviour{
     }
 
 
-    public void calculateStart()
+    public void calculateCharacterStart()
     {
-                       
-        rb = GetComponent<Rigidbody2D>();
+        calculateStart();      
         circleColliderPlayer = GetComponent<CircleCollider2D>();
         heightTestPlayer = circleColliderPlayer.bounds.extents.y + 0.05f;
-        layerMaskPlanet = LayerMask.GetMask("Default");
 
-        GameObject temp = GameObject.Find("Planet");
-        planetCenter = temp.GetComponent<Transform>();
-
-        rb.velocity = new Vector2(0, 0); //this can be moifie to have a starting velocity*/
     }
 
-    public void calculateUpdate()
+    public void calculateCharacterUpdate()
     {
-        
         turnLeftRight();
 
         //Check if the player is grounded
         isGrounded = IsGrounded();
 
-        calculateGravity();
 
         calculateJump();
 
         calculateMovement();
 
-        calculateRotation();
-
         calculateDrag();
 
-        rb.AddForce(gravityForce);
         rb.AddForce(jump, ForceMode2D.Impulse);
         rb.AddForce(moveDirection, ForceMode2D.Impulse);
         rb.AddForce(drag, ForceMode2D.Impulse);
@@ -113,9 +96,12 @@ public class CharacterController : MonoBehaviour{
             Debug.Log(additionalForce);
             additionalForce = Vector2.zero;
         }*/
+        calculateUpdate();
 
-        if(!IsGrounded())
+        if (!IsGrounded())
             rb.velocity += -jumpExtraction + jumpMagnitude * -gravityDirection; //this line is causing the glitch for them to fly up
+        
+
         previousV = -rb.velocity;
         previousMove = -moveDirection;
     }
@@ -174,27 +160,12 @@ public class CharacterController : MonoBehaviour{
             jump = new Vector2(0, 0);
     }
 
-    void calculateGravity()
-    {
-        //Calculate gravitational force towards the planet
-        gravityDirection = (planetCenter.position - transform.position).normalized;
-        gravityForce = gravityDirection * gravityForceMag;
-    }
-
     void calculateMovement()
     {
         //movement
         rotatedX = -gravityDirection.y;
         rotatedY = gravityDirection.x;
         moveDirection = new Vector2((horizontalInput * moveSpeed * rotatedX), (horizontalInput * moveSpeed * rotatedY));
-    }
-
-    void calculateRotation()
-    {
-        // Create a quaternion representing the desired rotation angle around the y-axis
-        float angle = Mathf.Atan2(gravityDirection.y, gravityDirection.x) * Mathf.Rad2Deg;
-        Quaternion desiredRotation = Quaternion.Euler(0f, 0f, 90f + angle);
-        transform.rotation = desiredRotation;
     }
 
     void calculateDrag()

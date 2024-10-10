@@ -12,7 +12,7 @@ public class SpaceManController : CharacterController
     void Start()
     {
         BulletObject = GameObject.Find("Bullet");
-        calculateStart();
+        calculateCharacterStart();
         
     }
 
@@ -20,7 +20,7 @@ public class SpaceManController : CharacterController
     {
         setMovement(inputSystemToGetAxis());
         setJump(Keyboard.current.spaceKey.isPressed);
-        calculateUpdate();
+        calculateCharacterUpdate();
     }
 
     private void Update()
