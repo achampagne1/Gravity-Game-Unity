@@ -7,18 +7,11 @@ public class SpaceManController : CharacterController
 {
     bool enemyCollideFlag = false;
     float health = 10f;
-
-    Rigidbody2D Bullet;
+    GameObject BulletObject;
 
     void Start()
     {
-        GameObject BulletObject = GameObject.Find("Bullet");
-        Bullet = BulletObject.GetComponent<Rigidbody2D>();
-        for (var i = 0; i < 10; i++)
-        {
-            GameObject ShotBullet = Instantiate(BulletObject, new Vector3(i * 2.0f, 0, 0), Quaternion.identity);
-            ShotBullet.GetComponent<BulletController>().setFirst();
-        }
+        BulletObject = GameObject.Find("Bullet");
         calculateStart();
         
     }
@@ -26,9 +19,17 @@ public class SpaceManController : CharacterController
     void FixedUpdate()
     {
         setMovement(inputSystemToGetAxis());
-        Debug.Log(Keyboard.current.aKey.isPressed);
         setJump(Keyboard.current.spaceKey.isPressed);
         calculateUpdate();
+    }
+
+    private void Update()
+    {
+        if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            GameObject ShotBullet = Instantiate(BulletObject, new Vector3(2, 2, 0), Quaternion.identity);
+            ShotBullet.GetComponent<BulletController>().setFirst();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

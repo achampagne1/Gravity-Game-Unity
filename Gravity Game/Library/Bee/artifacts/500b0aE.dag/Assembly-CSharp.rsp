@@ -404,6 +404,7 @@
 "Assets/Scripts/BulletController.cs"
 "Assets/Scripts/CharacterController.cs"
 "Assets/Scripts/MedPackController.cs"
+"Assets/Scripts/ObjectController.cs"
 "Assets/Scripts/RandomTimer.cs"
 "Assets/Scripts/SpaceManController.cs"
 "Assets/Scripts/SpaceWomanController.cs"

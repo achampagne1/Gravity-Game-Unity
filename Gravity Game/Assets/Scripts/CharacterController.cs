@@ -78,9 +78,6 @@ public class CharacterController : MonoBehaviour{
 
         GameObject temp = GameObject.Find("Planet");
         planetCenter = temp.GetComponent<Transform>();
-        
-        //if (Bullet != null)
-        //    Debug.Log("f");
 
         rb.velocity = new Vector2(0, 0); //this can be moifie to have a starting velocity*/
     }

@@ -17,7 +17,7 @@ public class BulletController : MonoBehaviour
     //vectors
     Vector2 gravityDirection = new Vector2(0, 0);
     Vector2 gravityForce = new Vector2(0, 0);
-    Vector2 initialForce = new Vector2(0, 0);
+    Vector2 initialForce = new Vector2(10, 0);
 
 
 
