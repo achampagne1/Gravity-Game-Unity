@@ -30,9 +30,7 @@ public class SpaceManController : CharacterController
     {
         if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
         {
-            Vector2 location = new Vector2(0, 0);
-            Vector2 direction = new Vector2(0, 0);
-            gunWrapper.shoot(location, direction);
+            gunWrapper.shoot(transform.position, Input.mousePosition);
         }
     }
 

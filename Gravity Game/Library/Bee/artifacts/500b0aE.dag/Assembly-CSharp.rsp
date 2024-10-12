@@ -410,6 +410,7 @@
 "Assets/Scripts/SpaceManController.cs"
 "Assets/Scripts/SpaceWomanController.cs"
 "Assets/Scripts/SpaceZombieController.cs"
+"Assets/Scripts/Timer.cs"
 "Assets/Scripts/UIHandler.cs"
 -langversion:9.0
 

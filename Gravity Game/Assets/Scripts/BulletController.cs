@@ -1,26 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class BulletController : ObjectController
 {
-
+    //object creation
     CircleCollider2D circleColliderPlayer;
     public GameObject prefab;
+    Timer timer;
 
+    //game variables
     float drag = .1f;
     bool first = true;
+    bool playerInvulnerable = true;
+    float bulletForce = 100.0f;
 
     //vectors
-    Vector2 initialForce = new Vector2(10, 0);
+    Vector2 initialForce = new Vector2(0, 0);
 
 
 
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         calculateStart();
+        timer = new Timer(1f);
+        timer.startTimer();
+        Physics2D.IgnoreLayerCollision(9, 12, true);
+        Debug.Log(initialForce.x);
+        rb.AddForce(initialForce*bulletForce, ForceMode2D.Impulse);
     }
 
     // Update is called once per frame
@@ -28,6 +36,9 @@ public class BulletController : ObjectController
     {
         if (!first)
         {
+            if (timer.checkTimer()) //currently the player layer is 9 and the bullet layer is 12
+                Physics2D.IgnoreLayerCollision(9, 12, false);
+
             calculateRotation();
             calculateUpdate();
             rb.velocity = calculateDrag(rb.velocity);
@@ -58,8 +69,9 @@ public class BulletController : ObjectController
         Destroy(this.gameObject);
     }
 
-    public void setNotFirst()
+    public void newInstance(Vector2 direction)
     {
+        initialForce = direction;
         first = false;
     }
 
