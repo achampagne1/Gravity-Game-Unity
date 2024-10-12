@@ -15,7 +15,7 @@ public class SpaceZombieController : CharacterController
 
     void Start()
     {
-        calculateStart();
+        calculateCharacterStart();
         pauseDuration.create(.1f, 1f);
         moveDuration.create(1f, 4f);
     }
@@ -41,7 +41,7 @@ public class SpaceZombieController : CharacterController
                 randomMovement();
             setMovement(moveInput);
         }
-        calculateUpdate();
+        calculateCharacterUpdate();
     }
 
     void randomMovement()

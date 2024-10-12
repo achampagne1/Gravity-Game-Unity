@@ -20,12 +20,7 @@ public class BulletController : ObjectController
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-       
-        GameObject temp = GameObject.Find("Planet");
-        planetCenter = temp.GetComponent<Transform>();
-
-        rb.AddForce(initialForce, ForceMode2D.Impulse);
+        calculateStart();
     }
 
     // Update is called once per frame
@@ -39,7 +34,7 @@ public class BulletController : ObjectController
         }
     }
 
-    public override void calculateRotation()
+    protected override void calculateRotation()
     {
         // Create a quaternion representing the desired rotation angle around the y-axis
         // bullet rotation is slightly different from other object rotations. it must take into account its velocity
@@ -63,7 +58,7 @@ public class BulletController : ObjectController
         Destroy(this.gameObject);
     }
 
-    public void setFirst()
+    public void setNotFirst()
     {
         first = false;
     }

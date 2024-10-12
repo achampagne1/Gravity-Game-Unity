@@ -5,15 +5,18 @@ using UnityEngine.InputSystem;
 
 public class SpaceManController : CharacterController
 {
+    //object creation
+    GunWrapper gunWrapper;
+
+    //game variables
     bool enemyCollideFlag = false;
     float health = 10f;
-    GameObject BulletObject;
 
     void Start()
     {
-        BulletObject = GameObject.Find("Bullet");
         calculateCharacterStart();
-        
+        gunWrapper = new GunWrapper();
+        gunWrapper.Start();
     }
 
     void FixedUpdate()
@@ -27,8 +30,9 @@ public class SpaceManController : CharacterController
     {
         if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
         {
-            GameObject ShotBullet = Instantiate(BulletObject, new Vector3(2, 2, 0), Quaternion.identity);
-            ShotBullet.GetComponent<BulletController>().setFirst();
+            Vector2 location = new Vector2(0, 0);
+            Vector2 direction = new Vector2(0, 0);
+            gunWrapper.shoot(location, direction);
         }
     }
 
