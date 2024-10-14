@@ -12,7 +12,7 @@ public class BulletController : ObjectController
     float drag = .1f;
     bool first = true;
     bool playerInvulnerable = true;
-    float bulletForce = 100.0f;
+    float bulletForce = 50.0f;
 
     //vectors
     Vector2 initialForce = new Vector2(0, 0);
@@ -24,9 +24,10 @@ public class BulletController : ObjectController
     public void Start()
     {
         calculateStart();
-        timer = new Timer(1f);
+        timer = new Timer(.5f);
         timer.startTimer();
         Physics2D.IgnoreLayerCollision(9, 12, true);
+        Physics2D.IgnoreLayerCollision(12, 12, true);
         Debug.Log(initialForce.x);
         rb.AddForce(initialForce*bulletForce, ForceMode2D.Impulse);
     }

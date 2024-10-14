@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "D:\\Gravity-Game-Unity\\Gravity Game\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FBA57953-C0C3-F9D8-E86A-9F7C063B5FDE}|Assembly-CSharp.csproj|D:\\Gravity-Game-Unity\\Gravity Game\\assets\\scripts\\bulletcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FBA57953-C0C3-F9D8-E86A-9F7C063B5FDE}|Assembly-CSharp.csproj|d:\\gravity-game-unity\\gravity game\\assets\\scripts\\bulletcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FBA57953-C0C3-F9D8-E86A-9F7C063B5FDE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bulletcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FBA57953-C0C3-F9D8-E86A-9F7C063B5FDE}|Assembly-CSharp.csproj|d:\\gravity-game-unity\\gravity game\\assets\\scripts\\gunwrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FBA57953-C0C3-F9D8-E86A-9F7C063B5FDE}|Assembly-CSharp.csproj|D:\\Gravity-Game-Unity\\Gravity Game\\assets\\scripts\\gunwrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FBA57953-C0C3-F9D8-E86A-9F7C063B5FDE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gunwrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -15,11 +15,11 @@
       "RelativeMoniker": "D:0:0:{FBA57953-C0C3-F9D8-E86A-9F7C063B5FDE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spacemancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FBA57953-C0C3-F9D8-E86A-9F7C063B5FDE}|Assembly-CSharp.csproj|d:\\gravity-game-unity\\gravity game\\assets\\scripts\\charactercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FBA57953-C0C3-F9D8-E86A-9F7C063B5FDE}|Assembly-CSharp.csproj|D:\\Gravity-Game-Unity\\Gravity Game\\assets\\scripts\\charactercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FBA57953-C0C3-F9D8-E86A-9F7C063B5FDE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\charactercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FBA57953-C0C3-F9D8-E86A-9F7C063B5FDE}|Assembly-CSharp.csproj|d:\\gravity-game-unity\\gravity game\\assets\\scripts\\objectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FBA57953-C0C3-F9D8-E86A-9F7C063B5FDE}|Assembly-CSharp.csproj|D:\\Gravity-Game-Unity\\Gravity Game\\assets\\scripts\\objectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FBA57953-C0C3-F9D8-E86A-9F7C063B5FDE}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\objectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -40,7 +40,7 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\BulletController.cs",
               "ToolTip": "D:\\Gravity-Game-Unity\\Gravity Game\\Assets\\Scripts\\BulletController.cs",
               "RelativeToolTip": "Assets\\Scripts\\BulletController.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwA4AAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwBoAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-11T18:07:51.488Z",
               "EditorCaption": ""
@@ -53,7 +53,7 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\GunWrapper.cs",
               "ToolTip": "D:\\Gravity-Game-Unity\\Gravity Game\\Assets\\Scripts\\GunWrapper.cs",
               "RelativeToolTip": "Assets\\Scripts\\GunWrapper.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAowB4AAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-12T21:01:39.683Z",
               "EditorCaption": ""
@@ -66,7 +66,7 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\SpaceManController.cs",
               "ToolTip": "D:\\Gravity-Game-Unity\\Gravity Game\\Assets\\Scripts\\SpaceManController.cs",
               "RelativeToolTip": "Assets\\Scripts\\SpaceManController.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwCAAAABEAAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAowCsAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-11T04:07:14.268Z",
               "EditorCaption": ""
@@ -92,7 +92,7 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\ObjectController.cs",
               "ToolTip": "D:\\Gravity-Game-Unity\\Gravity Game\\Assets\\Scripts\\ObjectController.cs",
               "RelativeToolTip": "Assets\\Scripts\\ObjectController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABwAAAAAAAAAAAAQwDgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-12T20:55:30.832Z",
               "EditorCaption": ""
