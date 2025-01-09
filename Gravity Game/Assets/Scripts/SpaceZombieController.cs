@@ -8,10 +8,12 @@ public class SpaceZombieController : CharacterController
     RandomTimer pauseDuration = new RandomTimer();
     RandomTimer moveDuration = new RandomTimer(); 
 
+    //game variables
     int moveInput = 0;
     bool pause = false;
     bool following = false;
     public bool movementToggle = true;
+    bool first = true;
 
     void Start()
     {
@@ -22,26 +24,26 @@ public class SpaceZombieController : CharacterController
 
     void FixedUpdate()
     {
-        if (movementToggle) //for debugging purposes
+        if (!first)
         {
-            if (detectPlayer() && following == false)
+            if (movementToggle) //for debugging purposes
             {
-                if (getFacingLeft())
-                    moveInput = -1;
+                if (detectPlayer())
+                {
+                    if (getFacingLeft())
+                        moveInput = -1;
+                    else
+                        moveInput = 1;
+                    following = true;
+                }
                 else
-                    moveInput = 1;
-                following = true;
+                    randomMovement();
+                setMovement(moveInput);
             }
-            else if (!detectPlayer() && following == true)
-            {
-                moveInput = 0;
-                following = false;
-            }
-            else
-                randomMovement();
-            setMovement(moveInput);
+            calculateCharacterUpdate();
+            if (getHealth() == 0)
+                Destroy(this.gameObject);
         }
-        calculateCharacterUpdate();
     }
 
     void randomMovement()
@@ -74,5 +76,18 @@ public class SpaceZombieController : CharacterController
                 return true;
         }
         return false;
+    }
+
+    public void newInstance()
+    {
+        first = false;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "Bullet(Clone)")
+        {
+            setHealth(getHealth() - 1f);
+        }
     }
 }   

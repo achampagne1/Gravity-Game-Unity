@@ -28,7 +28,6 @@ public class BulletController : ObjectController
         timer.startTimer();
         Physics2D.IgnoreLayerCollision(9, 12, true);
         Physics2D.IgnoreLayerCollision(12, 12, true);
-        Debug.Log(initialForce.x);
         rb.AddForce(initialForce*bulletForce, ForceMode2D.Impulse);
     }
 

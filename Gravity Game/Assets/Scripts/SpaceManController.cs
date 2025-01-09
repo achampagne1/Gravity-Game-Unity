@@ -10,11 +10,11 @@ public class SpaceManController : CharacterController
 
     //game variables
     bool enemyCollideFlag = false;
-    float health = 10f;
 
     void Start()
     {
         calculateCharacterStart();
+        setMaxHealth(10f);
         gunWrapper = new GunWrapper();
         gunWrapper.Start();
     }
@@ -47,21 +47,21 @@ public class SpaceManController : CharacterController
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "SpaceZombie" && enemyCollideFlag == false)
+        if (collision.gameObject.name == "SpaceZombie(Clone)" && enemyCollideFlag == false)
         {
             //Vector2 forceVector = new Vector2(-5f,0f);
             //addForceLocal(forceVector);
-            health -= 1f;
-            UIHandler.instance.setHealthValue(health);
+            setHealth(getHealth() - 1f);
+            UIHandler.instance.setHealthValue(getHealth());
             enemyCollideFlag = true;
         }
-        else if (collision.gameObject.name != "SpaceZombie" && enemyCollideFlag == true)
+        else if (collision.gameObject.name != "SpaceZombie(Clone)" && enemyCollideFlag == true)
             enemyCollideFlag = false;
 
         if (collision.gameObject.name == "MedPack")
         {
-            health = 10f;
-            UIHandler.instance.setHealthValue(health);
+            setHealth(10f);
+            UIHandler.instance.setHealthValue(getHealth());
         }
             
 

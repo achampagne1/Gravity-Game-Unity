@@ -16,6 +16,8 @@ public class CharacterController : ObjectController{
     float rotatedX = 0;
     float rotatedY = 0;
     float jumpMagnitude = 0;
+    float maxHealth = 3f; //default max health is 3
+    float health = 0f;
     bool isGrounded = false;
     bool space = false;
     bool facingLeft = false;
@@ -39,7 +41,17 @@ public class CharacterController : ObjectController{
     public void setJump(bool jumpInput)
     {
         space = jumpInput;
-    } 
+    }
+
+    public void setHealth(float newHealth)
+    {
+        health = newHealth;
+    }
+
+    public void setMaxHealth(float newMaxHealth)
+    {
+        maxHealth = newMaxHealth;
+    }
 
     public CircleCollider2D getCharacterCollider()
     {
@@ -61,9 +73,15 @@ public class CharacterController : ObjectController{
         return facingLeft;
     }
 
+    public float getHealth()
+    {
+        return health;
+    }
+
 
     public void calculateCharacterStart()
     {
+        health = maxHealth;
         calculateStart();      
         circleColliderPlayer = GetComponent<CircleCollider2D>();
         heightTestPlayer = circleColliderPlayer.bounds.extents.y + 0.05f;

@@ -27,7 +27,6 @@ public class Timer
         if (isRunning)
         {
             currentTime -= Time.deltaTime; // Decrease the timer based on time passed
-
             if (currentTime <= 0)
             {
                 isRunning = false;
